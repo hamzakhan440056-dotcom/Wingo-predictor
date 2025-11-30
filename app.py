@@ -35,6 +35,6 @@ if st.button("🔮 Predict"):
     st.info(f"Pattern: {colors}")
 
 if st.session_state.history:
-[11/30, 11:03 AM] ChatGPT: st.subheader("📜 Previous Predictions:")
+st.subheader("📜 Previous Predictions:")
     for idx, (pattern, result) in enumerate(reversed(st.session_state.history[-5:]), 1):
         st.write(f"{idx}. Pattern: {pattern} → Prediction: {result}")
