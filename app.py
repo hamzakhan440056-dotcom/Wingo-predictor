@@ -27,14 +27,12 @@ import streamlit as st
 ‎
 ‎if st.button("🔮 Predict"):
 ‎    colors = [get_color(n) for n in [n1, n2, n3]]
-‎
-‎prediction = random.choice(["Red", "Green", "Violet"])
+‎    prediction = random.choice(["Red", "Green", "Violet"])
 ‎    st.session_state.history.append((colors, prediction))
 ‎
 ‎    st.success(f"Prediction: {prediction}")
 ‎    st.info(f"Pattern: {colors}")
 ‎
-‎if st.session_state.history:
-‎    st.subheader("📜 Previous Predictions:")
+‎if st.session_state.history:st.subheader("📜 Previous Predictions:")
 ‎    for idx, (pattern, result) in enumerate(reversed(st.session_state.history[-5:]), 1):
 ‎        st.write(f"{idx}. Pattern: {pattern} → Prediction: {result}")
